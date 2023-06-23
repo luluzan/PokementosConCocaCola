@@ -14,7 +14,7 @@ import HelloWorld from './components/HelloWorld.vue'
   Button
 </v-btn>
       <nav>
-        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/">Casita</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>
