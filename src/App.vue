@@ -5,8 +5,6 @@ import PokemonLittleCard from './components/PokemonLittleCard.vue';
 </script>
 
 <template>
-  <header>
-  </header>
   <PokemonLittleCard />
   <!--<RouterView /> -->
 </template>
