@@ -1,9 +1,7 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import PokemonLittleCard from '../components/PokemonLittleCard.vue';
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+    <PokemonLittleCard />
 </template>

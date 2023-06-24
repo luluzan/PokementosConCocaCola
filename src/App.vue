@@ -1,16 +1,14 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+//import { RouterLink, RouterView } from 'vue-router'
+//import HomeView from './components/HomeView.vue'
+import PokemonLittleCard from './components/PokemonLittleCard.vue';
 </script>
 
 <template>
-
-  <h1>Hola Frikis</h1>
-
-
+  <PokemonLittleCard />
+  <!--<RouterView /> -->
 </template>
 
 <style scoped>
-
 
 </style>
