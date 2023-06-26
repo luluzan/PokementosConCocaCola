@@ -10,11 +10,11 @@ import HelloWorld from './components/HelloWorld.vue'
     <v-toolbar density="comfortable" color="#1D2C5E"></v-toolbar>
     <v-img  :width="300"  aspect-ratio="16/9"   variant=elevation src="../public/imgs/logo.png"></v-img>
   </header>
-  
+ <main> 
 
   
 
-  <h1>Hola Frikis</h1>
+  <!-- <h1>Hola Frikis</h1>
 
   <div class="text--primary">
     <!-- Using the elevation prop -->
@@ -40,9 +40,9 @@ import HelloWorld from './components/HelloWorld.vue'
         Class based elevation
       </div>
     </v-hover>
-  </div>
+  </div> -->
 
-
+</main>
 </template>
 
 <style scoped>
