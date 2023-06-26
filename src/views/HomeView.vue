@@ -1,7 +1,7 @@
 <script setup>
-import PokemonLittleCard from '../components/PokemonLittleCard.vue';
+import PokemonCard from '../components/PokemonCard.vue';
 </script>
 
 <template>
-    <PokemonLittleCard />
+        <PokemonCard />
 </template>
