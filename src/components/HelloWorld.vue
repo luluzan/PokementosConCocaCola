@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-  <h1></h1>
+  <h1>prueba</h1>
 </template>
 
 <style scoped>

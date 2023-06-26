@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import ToolBarsSearch from './components/ToolBarsSearch.vue'
 </script>
 
 <template>
@@ -11,8 +12,8 @@ import HelloWorld from './components/HelloWorld.vue'
     <v-img  :width="300"  aspect-ratio="16/9"   variant=elevation src="../public/imgs/logo.png"></v-img>
   </header>
  <main> 
-
-  
+<HelloWorld/>
+ <ToolBarsSearch/> 
 
 
 
