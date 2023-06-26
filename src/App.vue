@@ -3,24 +3,37 @@
 import FooterComponent from './components/FooterComponent.vue'
 
 export default {
-  name:'App',
   components: {FooterComponent}
 }
 </script>
 
 <template>
-<!-- <RouterView />  -->
-  <h1>Hello world</h1>
-  
-   <!-- <v-btn>
-    Buttonnnnn
-  </v-btn> -->
 
- 
-  <FooterComponent />
+  <h1>Hola Frikis</h1>
+  <div id="app">
+    <!-- Contenido de tu aplicación -->
+    
+    <div class="content">
+      <!-- Contenido principal de la aplicación -->
+    </div>
+
+    <FooterComponent />
+  </div>
+
+
+
 
 </template>
 
-<style scoped>
+<style>
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
+.content {
+  flex: 1;
+  /* Estilos adicionales para el contenido principal de la aplicación */
+}
 </style>

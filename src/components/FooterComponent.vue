@@ -1,35 +1,36 @@
 <script>
-  export default {
-    data: () => ({
-      links: [
-        'Home',
-        'About Us',
-        'Team',
-        'Services',
-        'Blog',
-        'Contact Us',
-      ],
-    }),
-  }
+// import Pokeball from '/public/imgs/pokeball.png'
+export default {
+  data() {
+    return {
+      currentYear: new Date().getFullYear(),
+    };
+  },
+};
 </script>
-
 <template>
-  <v-footer color="purple" app>Footer Inset</v-footer>
-  <v-footer class="bg-grey-lighten-1">
-    <v-row justify="center" no-gutters>
-      <v-btn
-        v-for="link in links"
-        :key="link"
-        color="white"
-        variant="text"
-        class="mx-2"
-        rounded="xl"
-      >
-        {{ link }}
-      </v-btn>
-      <v-col class="text-center mt-4" cols="12">
-        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-      </v-col>
-    </v-row>
-  </v-footer>
+  <footer class="footer">
+    <div>
+      <img src="/public/imgs/pokeball.png" class="pokeball" />
+    </div>
+    <p>&copy; {{ currentYear }} Mi Sitio Web</p>
+  </footer>
 </template>
+<style>
+.footer {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #3c5aa6;
+  padding: 20px;
+  text-align: center;
+  /* position: fixed;  */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.pokeball{
+  width:47px;
+}
+</style>
