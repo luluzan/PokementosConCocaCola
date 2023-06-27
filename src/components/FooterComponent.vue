@@ -11,7 +11,7 @@ export default {
 <template>
   <footer class="footer">
     <div>
-      <img src="/public/imgs/pokeball.png" class="pokeball" />
+      <img src="imgs/pokeball.png" class="pokeball" />
     </div>
     <p>&copy; {{ currentYear }} The Pokemon company <br/> by Factoría Pokemon</p>
   </footer>
