@@ -13,7 +13,7 @@ export default {
     <div>
       <img src="/public/imgs/pokeball.png" class="pokeball" />
     </div>
-    <p>&copy; {{ currentYear }} Mi Sitio Web</p>
+    <p>&copy; {{ currentYear }} The Pokemon company <br/> by Factoría Pokemon</p>
   </footer>
 </template>
 <style>
@@ -23,7 +23,7 @@ export default {
   justify-content: center;
   align-items: center;
   background-color: #3c5aa6;
-  padding: 20px;
+  padding: 5px;
   text-align: center;
   /* position: fixed;  */
   bottom: 0;
@@ -32,5 +32,11 @@ export default {
 }
 .pokeball{
   width:47px;
+}
+p{
+  color: white;
+  margin: 10px;
+  /* padding: 30px; */
+  flex-wrap: wrap;
 }
 </style>

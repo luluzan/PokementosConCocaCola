@@ -11,18 +11,12 @@ export default {
 
   <h1>Hola Frikis</h1>
   <div id="app">
-    <!-- Contenido de tu aplicación -->
-    
+    <!-- Contenido de tu aplicación -->  
     <div class="content">
       <!-- Contenido principal de la aplicación -->
     </div>
-
     <FooterComponent />
   </div>
-
-
-
-
 </template>
 
 <style>
@@ -34,6 +28,5 @@ export default {
 
 .content {
   flex: 1;
-  /* Estilos adicionales para el contenido principal de la aplicación */
 }
 </style>
