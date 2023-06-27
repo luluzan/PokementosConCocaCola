@@ -15,7 +15,7 @@ import FooterComponent from './components/FooterComponent.vue'
 
 <header>
     <div id="vacio">
-      <img src="../public/imgs/logo.png" alt/>
+      <img src="/imgs/logo.png" alt/>
     </div>
     <v-toolbar density="comfortable" color="#C83D34"></v-toolbar>
     <v-divider   :thickness="5"   class="border-opacity-100"  color="warning"></v-divider>
