@@ -1,4 +1,5 @@
 <script setup>
+<<<<<<< HEAD
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import ToolBarsSearch from './components/ToolBarsSearch.vue'
@@ -18,9 +19,22 @@ import ToolBarsSearch from './components/ToolBarsSearch.vue'
 
 
 </main>
+=======
+//import { RouterLink, RouterView } from 'vue-router'
+//import HomeView from './components/HomeView.vue'
+import PokemonLittleCard from './components/PokemonLittleCard.vue';
+</script>
+
+<template>
+  <PokemonLittleCard />
+  <!--<RouterView /> -->
+>>>>>>> 587635f0db0feafa6c2c753d1e72974992bf7933
 </template>
 
 <style scoped>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 587635f0db0feafa6c2c753d1e72974992bf7933
 </style>
