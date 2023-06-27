@@ -1,10 +1,14 @@
 <script setup>
- import { RouterLink, RouterView } from 'vue-router'
+//  import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import GridContainer from './components/GridContainer.vue'
+import PokemonLittleCard from './components/PokemonLittleCard.vue';
+import ToolBarsSearch from './components/ToolBarsSearch.vue';
 </script>
 
 <template>
+  <PokemonLittleCard />
+  <template>
   <header>
     <v-toolbar density="comfortable" color="#C83D34"></v-toolbar>
     <v-divider   :thickness="5"   class="border-opacity-100"  color="warning"></v-divider>
@@ -17,6 +21,11 @@ import GridContainer from './components/GridContainer.vue'
 
 <GridContainer />
 
+<main> 
+  <ToolBarsSearch/> 
+
+  <PokemonLittleCard />
+</main>
 </template>
 
 <style scoped>

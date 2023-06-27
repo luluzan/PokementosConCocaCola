@@ -9,6 +9,7 @@ import './assets/main.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+//import axios from 'axios';
 
 const vuetify = createVuetify({
     components,
@@ -19,5 +20,7 @@ const app = createApp(App)
 
 app.use(router)
 app.use(vuetify)
+//app.use(axios)
+//app.config.globalProperties.$http = axios
 app.mount('#app')
 
