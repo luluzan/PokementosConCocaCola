@@ -11,10 +11,7 @@
   },
   "dependencies": {
     "axios": "^1.4.0",
-<<<<<<< HEAD
     "ress": "^5.0.2",
-=======
->>>>>>> 18c4a446fefcc70ec22577f3da9ff7fb0a609aeb
     "vue": "^3.3.4",
     "vue-router": "^4.2.2",
     "vuetify": "^3.3.5"
