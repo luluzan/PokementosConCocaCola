@@ -4,8 +4,7 @@ import ToolBarsSearch from './components/ToolBarsSearch.vue';
 </script>
 
 <template>
-  <PokemonLittleCard />
-  <template>
+  
   <header>
     <v-toolbar density="comfortable" color="#C83D34"></v-toolbar>
     <v-divider   :thickness="5"   class="border-opacity-100"  color="warning"></v-divider>
