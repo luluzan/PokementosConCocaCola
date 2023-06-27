@@ -3,9 +3,9 @@ import PokemonLittleCard from './components/PokemonLittleCard.vue';
 import ToolBarsSearch from './components/ToolBarsSearch.vue';
 import FooterComponent from './components/FooterComponent.vue'
 
-export default {
-  components: {FooterComponent}
-}
+// export default {
+//   components: {FooterComponent}
+// }
 </script>
 
 <template>
