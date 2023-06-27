@@ -1,8 +1,8 @@
 <script setup>
 //  import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 import GridContainer from './components/GridContainer.vue'
-import PokemonLittleCard from './components/PokemonLittleCard.vue';
+// import PokemonLittleCard from './components/PokemonLittleCard.vue';
 import ToolBarsSearch from './components/ToolBarsSearch.vue';
 </script>
 
