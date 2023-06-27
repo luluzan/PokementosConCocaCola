@@ -3,7 +3,7 @@
     <!-- <v-img :src="pokemon.imageUrl" :style="{ backgroundColor: typeColors[pokemon.type[0]] }">
       </v-img> -->
 
-        <v-img class="pokemonimg" :src="pokemon.imageUrl">
+        <v-img class="pokemonimg" :src="pokemon.imageUrl" height="210">
         </v-img>
       
     <div class="wrap">
@@ -18,7 +18,7 @@
                     <h6 class="text-center">{{ pokemon.name }}</h6>
                   </v-col>
                   <v-col cols="3.5">
-                    <h6 class="text-end">{{ pokemon.type[0] }}</h6>
+                    <h6 class="text-end">{{ pokemon.species }}</h6>
                   </v-col>
                 </v-row>
                 <v-row>
@@ -58,47 +58,67 @@
         </v-hover>
         
         <v-overlay v-model="overlay" class="align-center justify-center" scrim="black">
-          <v-card class="mx-auto" max-width="100vw" rounded="lg">
-            <v-card-title class="text-center">{{ pokemon.name }}</v-card-title>
-            <v-img :src="pokemon.imageUrl" :style="{ backgroundColor: typeColors[pokemon.type[0]] }" height="45vh">
+          <v-card class="mx-auto" width="50vw" height="95vh" rounded="lg">
+            <v-card-title class="pokemonnameoverlay text-center pb-12 pt-6">{{ pokemon.name }}</v-card-title>
+            <v-img :src="pokemon.imageUrl" :style="{ backgroundColor: typeColors[pokemon.type[0]] }" height="40vh">
             </v-img>
             <v-divider></v-divider>
-            <v-card-text>
+            <v-card-text class="mx-auto">
               <v-row>
-                <v-col cols="6">
+                <v-col cols="2">
+
+                </v-col>
+                <v-col cols="4">
                   <v-card-title>Height</v-card-title>
                 </v-col>
-                <v-col cols="6">
+                <v-col cols="4">
                   <v-card-title class="text-end mt-n2">Ability 1</v-card-title>
                 </v-col>
+                <v-col cols="2"></v-col>
               </v-row>
               <v-row>
-                <v-col cols="6">
-                  <v-card-text>{{ pokemon.height }}</v-card-text>
+                <v-col cols="2">
                 </v-col>
-                <v-col cols="6">
+                <v-col cols="4">
+                  <v-card-text class="text-center">{{ pokemon.height }} m</v-card-text>
+                </v-col>
+                <v-col cols="4">
                   <v-card-text class="text-end mt-n2">{{ pokemon.abilities[0] }}</v-card-text>
                 </v-col>
+                <v-col cols="2"></v-col>
               </v-row>
               <v-row>
-                  <v-col cols="6">
+                <v-col class="2"></v-col>
+                  <v-col cols="4">
                     <v-card-title>Weight</v-card-title>
                   </v-col>
-                  <v-col cols="6">
+                  <v-col cols="4">
                     <v-card-title class="text-end mt-n2">Ability 2</v-card-title>
                   </v-col>
+                  <v-col cols="2"></v-col>
                 </v-row>
               <v-row>
-                <v-col cols="6">
+                <v-col cols="2"></v-col>
+                <v-col cols="4">
                   <template v-if="pokemon.type.length > 1">
                   <v-card-text>{{ pokemon.weight }}</v-card-text>
                   </template>
                 </v-col>
-                <v-col cols="6">
+                <v-col cols="4">
                   <v-card-text class="text-end mt-n2">{{ pokemon.abilities[1] }}</v-card-text>
                 </v-col>
+                <v-col cols="2"></v-col>
               </v-row>
             </v-card-text>
+            <v-btn 
+              class="text-none"
+              color="red-darken-3"
+              size="x-large"
+              variant="flat"
+              rounded="lg"
+              >
+              Pokedex
+            </v-btn>
           </v-card>
         </v-overlay>
       </v-card-actions>
@@ -135,7 +155,7 @@ export default {
                 const data = response.data;
                 pokemon.id = data.id;
                 pokemon.name = data.name;
-                pokemon.imageUrl = data.sprites.other["official-artwork"].front_default;
+                pokemon.imageUrl = data.sprites.other.dream_world.front_default;
                 pokemon.type = data.types.map(type => type.type.name);
                 pokemon.height = data.height;
                 pokemon.weight = data.weight;
@@ -172,6 +192,7 @@ export default {
                 .then(response => {
                 const data = response.data;
                 pokemon.species = data.genera.find(genus => genus.language.name === "en").genus;
+                pokemon.region = data.generation.name; // Asignar el nombre de la región a la propiedad pokemon.region
             })
                 .catch(error => {
                 console.log(error);
@@ -249,6 +270,10 @@ ul {
 btn {
   border-radius: 8px;
   font-size: 0.625rem;
+ }
+
+ .pokemonnameoverlay {
+  font-size: 6rem;
  }
 </style>
 
