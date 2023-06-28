@@ -20,7 +20,7 @@ const colorsType = {
 };
 
 const objColors = Object.keys(colorsType);
-const  pokemonCount=1110;
+const pokemonCount= 1010;
 //const APIUrl='https://pokeapi.co/api/v2/pokemon/?limit=1126';
 const APIUrl='https://pokeapi.co/api/v2/pokemon/';
 let name='Nombre';
@@ -92,13 +92,14 @@ const searchName=async(namePokemon)=>{
 
 const searchType=async(typePokemon)=>{
   let typeVer='';
+  console.log(typePokemon + "a");
   for (let i = 1; i <= pokemonCount; i++) {
           let url = `${APIUrl}${i}`;
           try {
                   const res = await axios.get(url);
                   type=res.data.types.map(type => type.type.name);
-                  // console.log(type);
-                  // console.log(type.length);
+                   //console.log(type);
+                   //console.log(type.length);
                   if(type.length>1){
                     typeVer=type[0]+' | '+type[1];
                   } else {                
@@ -138,7 +139,7 @@ export default {
     const typePokemon = ref('');
 
     const submitFormType = () => {
-      searchType(typePokemon.value);
+      searchType(typePokemon);
     };
 
     return {
@@ -169,50 +170,64 @@ const insertZero=(str)=>{
         return strZero;
 }
 
-// generateData();
+//generateData();
+
+//form
+
+  //  {export data: () => ({
+  //     pokeName: '',
+  //     rules: [
+  //       value => {
+  //         if (value) return true
+
+  //         return 'Pon el nombre del pokemon que quieras bucar.'
+  //       },
+  //     ],
+  //   }),
+  
 
 </script>
 
 <template>
-    <h2>BUSCAR POR ID</h2>
-    <form @submit.prevent="submitFormId">
+  <div class="pokeSearch"><h2>BUSCAR POR ID</h2>
+    
+    <!-- <v-form @submit.prevent>
+      <v-text-field
+        v-model="firstName"
+        :rules="rules"
+        label="First name"
+      ></v-text-field>
+      <v-btn type="submit" block class="mt-2">Submit</v-btn>
+    </v-form>  -->
+    <v-form @submit.prevent="submitFormId" class="siono">
       <label for="idPokemon">ID:</label>
       <input type="text" id="idPokemon" v-model="idPokemon">
       <button type="submit">Enviar</button>
-    </form>
+    </v-form> 
 
     <h2>BUSCAR POR NOMBRE</h2>
-    <form @submit.prevent="submitFormName">
+    <v-form @submit.prevent=" submitFormName">
+      <v-text-field
+        v-model="pokeName"
+        :rules="rules"
+        label="Nombre Pokemon"
+      ></v-text-field>
+      <v-btn type="submit" block class="mt-2">Enviar</v-btn>
+    </v-form>
+    {/* <form @submit.prevent="submitFormName">
       <label for="namePokemon">Name:</label>
       <input type="text" id="namePokemon" v-model="namePokemon">
-      <button type="submit">Enviar</button>
-    </form>
+      <button type="submit">Enviar</button> 
+    </form> */}
 
     <h2>BUSCAR POR TIPO</h2>
-    <form @submit.prevent="submitFormType">
-      <label for="typePokemon">Selección:</label><br>
-      <select id="typePokemon" v-model="typePokemon">
-        <option value="">Seleccione una opción</option>
-        <option value="fire">fire</option>
-        <option value="grass">grass</option>
-        <option value="electric">electric</option>
-        <option value="water">water</option>
-        <option value="ground">ground</option>
-        <option value="rock">rock</option>
-        <option value="fairy">fairy</option>
-        <option value="poison">poison</option>
-        <option value="bug">bug</option>
-        <option value="dragon">dragon</option>
-        <option value="psychic">psychic</option>
-        <option value="flying">flying</option>
-        <option value="fighting">fighting</option>
-        <option value="normal">normal</option>
-      </select>
-      <br>
-      <button type="submit">Enviar</button>
-    </form>
-
-    <h2></h2>
+    <v-form @submit.prevent="submitFormType">
+      <v-combobox label="typePokemon"
+   :items="['fire',2, 'patata', 'grass', 'electric', 'water', 'ground', 'rock', 'fairy', 'poison', 'bug', 'dragon', 'psychic', 'flying', 'fighting', 'normal']">
+//</v-combobox> <v-btn type="submit">Enviar</v-btn> 
+    </v-form>
+</div>
+  >
 </template>
 
 <style>
@@ -224,6 +239,7 @@ input {
   font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
   border-bottom: 1px solid #ccc;
 }
+
 </style>
 
 
