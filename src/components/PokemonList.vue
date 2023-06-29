@@ -190,7 +190,7 @@ export default {
     <v-text-field class="custom-text-field" v-model="filterName" label="Buscar NOMBRE"></v-text-field>
     <v-text-field class="custom-text-field" v-model="filterId" label="Introduce ID"></v-text-field>
     <v-select class="custom-select" v-model="selectedType" :items="types" label="Selecciona TIPO"></v-select>
-   </div>
+  </div>
 
     <v-container>
       <v-row>
