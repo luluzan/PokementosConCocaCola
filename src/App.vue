@@ -1,9 +1,10 @@
 <script setup>
 // import { RouterLink, RouterView } from 'vue-router'
 // import HelloWorld from './components/HelloWorld.vue'
-import GridContainer from './components/GridContainer.vue'
-import ToolBarsSearch from './components/ToolBarsSearch.vue';
+//import PokemonList from './components/GridContainer.vue'
+//import ToolBarsSearch from './components/ToolBarsSearch.vue';
 import FooterComponent from './components/FooterComponent.vue'
+import PokemonList from './components/PokemonList.vue';
 </script>
 
 <template>
@@ -17,10 +18,10 @@ import FooterComponent from './components/FooterComponent.vue'
     <v-toolbar density="comfortable" color="#1D2C5E"></v-toolbar>
   </header>
  <main> 
- <ToolBarsSearch/> 
-    <GridContainer />
+  <!-- <ToolBarsSearch/> -->
+  <PokemonList />
 </main>
-   <FooterComponent />
+  <FooterComponent />
 </template>
 
 <style>

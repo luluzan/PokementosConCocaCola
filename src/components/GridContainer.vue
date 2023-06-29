@@ -1,6 +1,6 @@
 <script setup>
 
-import PokemonLittleCard from './PokemonLittleCard.vue';
+import PokemonCard from './PokemonCard.vue';
 
     // export default {
     // name: 'GridContainer'
@@ -14,35 +14,35 @@ import PokemonLittleCard from './PokemonLittleCard.vue';
 
                 <v-col cols="12" sm="6" lg="3" elevation="24" class="medida my-10">
                     <div class="card1">
-                       <PokemonLittleCard />
+                       <PokemonCard />
                     </div>                                
                 </v-col>
 
                 <v-col cols="12" sm="6" lg="3" elevation="24" class="medida my-10">
-                   <PokemonLittleCard />                   
+                   <PokemonCard />                   
                 </v-col>
 
                 <v-col cols="12" sm="6" lg="3" elevation="24" class="medida my-10">
-                   <PokemonLittleCard />                   
+                   <PokemonCard />                   
                 </v-col>
 
                 <v-col cols="12" sm="6" lg="3" elevation="24" class="medida my-10">
-                   <PokemonLittleCard />                   
+                   <PokemonCard />                   
                 </v-col>
                 <v-col cols="12" sm="6" lg="3" elevation="24" class="medida my-10">
-                   <PokemonLittleCard />                   
-                </v-col>
-
-                <v-col cols="12" sm="6" lg="3" elevation="24" class="medida my-10">
-                   <PokemonLittleCard />                   
+                   <PokemonCard />                   
                 </v-col>
 
                 <v-col cols="12" sm="6" lg="3" elevation="24" class="medida my-10">
-                   <PokemonLittleCard />                   
+                   <PokemonCard />                   
                 </v-col>
 
                 <v-col cols="12" sm="6" lg="3" elevation="24" class="medida my-10">
-                   <PokemonLittleCard />                   
+                   <PokemonCard />                   
+                </v-col>
+
+                <v-col cols="12" sm="6" lg="3" elevation="24" class="medida my-10">
+                   <PokemonCard />                   
                 </v-col>
 
             </v-row>
@@ -54,7 +54,7 @@ import PokemonLittleCard from './PokemonLittleCard.vue';
 
 <style>
 .medida {
-    text-align: center;
+    /*text-align: center;*/
     width: 200px;
     height: 382px;
       /* background-color: aqua;
