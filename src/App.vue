@@ -1,14 +1,10 @@
 <script setup>
-//  import { RouterLink, RouterView } from 'vue-router'
+// import { RouterLink, RouterView } from 'vue-router'
 // import HelloWorld from './components/HelloWorld.vue'
-import GridContainer from './components/GridContainer.vue'
-// import PokemonLittleCard from './components/PokemonLittleCard.vue';
-import ToolBarsSearch from './components/ToolBarsSearch.vue';
+//import PokemonList from './components/GridContainer.vue'
+//import ToolBarsSearch from './components/ToolBarsSearch.vue';
 import FooterComponent from './components/FooterComponent.vue'
-
-// export default {
-//   components: {FooterComponent}
-// }
+import PokemonList from './components/PokemonList.vue';
 </script>
 
 <template>
@@ -20,15 +16,12 @@ import FooterComponent from './components/FooterComponent.vue'
     <v-toolbar density="comfortable" color="#C83D34"></v-toolbar>
     <v-divider   :thickness="5"   class="border-opacity-100"  color="warning"></v-divider>
     <v-toolbar density="comfortable" color="#1D2C5E"></v-toolbar>
-   
   </header>
-<main> 
-
-  <ToolBarsSearch/> 
-  <GridContainer />
-  <!-- <PokemonLittleCard /> -->
+ <main> 
+  <!-- <ToolBarsSearch/> -->
+  <PokemonList />
 </main>
-<FooterComponent />
+  <FooterComponent />
 </template>
 
 <style>
@@ -40,6 +33,4 @@ import FooterComponent from './components/FooterComponent.vue'
 .content {
   flex: 1;
 } */
-
-
 </style>
