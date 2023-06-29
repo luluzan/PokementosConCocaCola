@@ -3,6 +3,7 @@
 // import HelloWorld from './components/HelloWorld.vue'
 //import PokemonList from './components/GridContainer.vue'
 //import ToolBarsSearch from './components/ToolBarsSearch.vue';
+//import Searchpoke from './components/SearchPoke.vue'
 import FooterComponent from './components/FooterComponent.vue'
 import PokemonList from './components/PokemonList.vue';
 </script>
@@ -18,7 +19,8 @@ import PokemonList from './components/PokemonList.vue';
     <v-toolbar density="comfortable" color="#1D2C5E"></v-toolbar>
   </header>
  <main> 
-  <!-- <ToolBarsSearch/> -->
+  <ToolBarsSearch/>
+  <!-- <Searchpoke/> -->
   <PokemonList />
 </main>
   <FooterComponent />

@@ -19,23 +19,51 @@ body{
     }
 
     .pokeSearch{
-        background-color: aquamarine;
+        font-family: Poppins;
+        text-transform: capitalize;
+        font-weight: bolder;
+        background-color: rgba(65, 95, 165, 0.9);
         border-radius:48px ;
         padding:2%;
-        margin: 3% 11%;
-        text-transform: capitalize;
-        color: blue;
-                
+        margin: 3% 31%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
-    .form-container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+    .custom-text-field {
+        margin-bottom: 16px;
+        background-color: #415FA5;
+       /*color:#FFCB05; */
+        color: #ff8c00;
+        font-weight: bolder;
+    }
+    /* .active-text-field {
+        background-color: red; 
+        color: white;
+      }
+     */
+
+    .custom-select{
+        background-color: #415FA5;
+        color: #ff8c00;
+        font-weight: bolder;
+        
+    }
+
+    .custom-select >>> .v-select__selections {
+        border: 2px solid red;
+        border-radius: 4px;
+        background-color: #EFEFEF;
+        color: #333333;
+        padding: 8px;
       }
       
-      .form-item {
-        margin-bottom: 16px;
-      } .siono{
-        background-color: #fff iportan !important;
-    }
+      .custom-select >>> .v-list-item {
+        /* Estilos personalizados para los elementos de la lista desplegable */
+        color: red;
+      }
+      
+      .custom-select >>> .v-list-item--active {
+        /* Estilos personalizados para el elemento activo en la lista desplegable */
+        background-color: #8d11e7;
+        color: #b71010;
+      }

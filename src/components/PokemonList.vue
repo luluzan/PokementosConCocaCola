@@ -186,9 +186,11 @@ export default {
 
 <template>
   <div>
-    <v-select v-model="selectedType" :items="types" label="Select Type"></v-select>
-    <v-text-field v-model="filterId" label="Filter by ID"></v-text-field>
-    <v-text-field v-model="filterName" label="Filter by Name"></v-text-field>
+  <div class="pokeSearch">
+    <v-text-field class="custom-text-field" v-model="filterName" label="Buscar NOMBRE"></v-text-field>
+    <v-text-field class="custom-text-field" v-model="filterId" label="Introduce ID"></v-text-field>
+    <v-select class="custom-select" v-model="selectedType" :items="types" label="Selecciona TIPO"></v-select>
+   </div>
 
     <v-container>
       <v-row>
