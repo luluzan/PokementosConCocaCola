@@ -1,36 +1,3 @@
-<template>
-  <div>
-    <v-select v-model="selectedType" :items="types" label="Select Type"></v-select>
-    <v-text-field v-model="filterId" label="Filter by ID"></v-text-field>
-    <v-text-field v-model="filterName" label="Filter by Name"></v-text-field>
-
-    <v-container>
-      <v-row>
-        <v-col v-for="pokemon in filteredPokemonList" :key="pokemon.id" cols="12" sm="6" md="4" lg="3">
-          <v-card elevation="6" rounded="">
-            <v-img :src="pokemon.image" :style="{ backgroundColor: typeColors[pokemon.type] }" height="200"></v-img>
-            <v-card-text>
-              <div>Id: {{ pokemon.id }}</div>
-              <div>Name: {{ pokemon.name }}</div>
-              <div>Type: {{ pokemon.type }}</div>
-              <div>Height: {{ pokemon.height }} m</div>
-              <div>Weight: {{ pokemon.weight }} kg</div>
-              <div>Abilities: {{ pokemon.abilities.join(", ") }}</div>
-              <div>Base Experience {{ pokemon.baseExperience }}</div>
-              <div>Health {{ pokemon.hp }}</div>
-              <div>Attack: {{ pokemon.attack }}</div>
-              <div>Genus: {{ pokemon.genus.replace(' Pokémon', '') }}</div>
-              <div>Region: {{ pokemon.region }}</div>
-              <div>Gender: {{ pokemon.genderRate }}</div>
-              <div>Moves: {{ getEnglishMoveNames(pokemon.moves).join(", ") }}</div>
-            </v-card-text>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
-  </div>
-</template>
-
 <script>
 import axios from "axios";
 
@@ -105,7 +72,7 @@ export default {
                   Promise.all(generationPromises)
                     .then((generationResponses) => {
                       const movesPromises = responses.map((response) =>
-                        axios.get(response.data.moves[0].move.url) // Obtener el primer movimiento, puedes ajustar esto según tus necesidades
+                        axios.get(response.data.moves[0].move.url)
                       );
 
                       Promise.all(movesPromises)
@@ -217,4 +184,35 @@ export default {
 };
 </script>
 
+<template>
+  <div>
+    <v-select v-model="selectedType" :items="types" label="Select Type"></v-select>
+    <v-text-field v-model="filterId" label="Filter by ID"></v-text-field>
+    <v-text-field v-model="filterName" label="Filter by Name"></v-text-field>
 
+    <v-container>
+      <v-row>
+        <v-col v-for="pokemon in filteredPokemonList" :key="pokemon.id" cols="12" sm="6" md="4" lg="3">
+          <v-card elevation="6" rounded="">
+            <v-img :src="pokemon.image" :style="{ backgroundColor: typeColors[pokemon.type] }" height="200"></v-img>
+            <v-card-text>
+              <div>Id: {{ pokemon.id }}</div>
+              <div>Name: {{ pokemon.name }}</div>
+              <div>Type: {{ pokemon.type }}</div>
+              <div>Height: {{ pokemon.height }} m</div>
+              <div>Weight: {{ pokemon.weight }} kg</div>
+              <div>Abilities: {{ pokemon.abilities.join(", ") }}</div>
+              <div>Base Experience {{ pokemon.baseExperience }}</div>
+              <div>Health {{ pokemon.hp }}</div>
+              <div>Attack: {{ pokemon.attack }}</div>
+              <div>Specie: {{ pokemon.genus.replace(' Pokémon', '') }}</div>
+              <div>Region: {{ pokemon.region }}</div>
+              <div>Gender: {{ pokemon.genderRate }}</div>
+              <div>Attack Moves: {{ getEnglishMoveNames(pokemon.moves).join(", ") }}</div>
+            </v-card-text>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
+</template>
