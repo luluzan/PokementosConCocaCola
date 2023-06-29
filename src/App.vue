@@ -14,9 +14,9 @@ import PokemonList from './components/PokemonList.vue';
     <div id="vacio">
       <img src="/imgs/logo.png" alt/>
     </div>
-    <v-toolbar density="comfortable" color="#C83D34"></v-toolbar>
+    <v-toolbar class="custom-toolbar" density="comfortable" color="#C83D34"></v-toolbar>
     <v-divider   :thickness="5"   class="border-opacity-100"  color="warning"></v-divider>
-    <v-toolbar density="comfortable" color="#1D2C5E"></v-toolbar>
+    <v-toolbar class="custom-toolbar" density="comfortable" color="#1D2C5E"></v-toolbar>
   </header>
  <main> 
   <ToolBarsSearch/>

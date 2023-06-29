@@ -5,7 +5,6 @@ body{
     background-image:url(/imgs/bg.png);
     background-repeat: repeat;
     color: black;
-    
     }
     #vacio{
         position:absolute; 
@@ -13,9 +12,18 @@ body{
         left:37%;
         filter: drop-shadow(0 2px 5px rgb(255, 255, 255));
         z-index: 1000;
+        display: flex;
     }
     #vacio img{
-        width: 300px;
+        width: 345px;
+        margin: 16px auto;
+        
+        
+    }
+
+    .custom-toolbar{
+        height: 85px;
+
     }
 
     .pokeSearch{
@@ -26,12 +34,12 @@ body{
         border-radius:48px ;
         padding:2%;
         margin: 3% 31%;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+         box-shadow: 10px 0px 20px 15px rgba(29, 44, 94, 0.5);
     }
 
     .custom-text-field {
         margin-bottom: 16px;
-        background-color: #415FA5;
+        background-color: #1D2C5E;
         color:#FFCB05; 
         color: #ff8c00;
         font-weight: bolder;
