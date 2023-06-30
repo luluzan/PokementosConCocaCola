@@ -1,3 +1,3 @@
 module.exports = {
-    publicPath: '/DeployPokeVue',
+    publicPath: '/Pokementosconcocacola',
   }
