@@ -312,23 +312,21 @@ ul {
 button {
   border-radius: 6px;
   font-size: 0.625rem;
- }
+}
 
- .pokemonnameoverlay {
+.pokemonnameoverlay {
   font-size: 5rem;
   color:#415fa5;
   text-transform: capitalize;
   font-weight: bolder;
   ;
- }
+}
 
- .carddata {
+.carddata {
   border: 3px solid #ff8c00;
- }
+}
 
- .pokedexbtn {
-  border: 4px solid black;
- }
+
 
  
 
