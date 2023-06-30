@@ -5,7 +5,7 @@
 //import ToolBarsSearch from './components/ToolBarsSearch.vue';
 import GeneralView  from './components/GeneralView.vue';
 import FooterComponent from './components/FooterComponent.vue'
-import PokemonList from './components/PokemonList.vue';
+// import PokemonList from './components/PokemonList.vue';
 </script>
 
 <template>

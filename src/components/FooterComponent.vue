@@ -25,7 +25,7 @@ export default {
   background-color: #3c5aa6;
   padding: 5px;
   text-align: center;
-  /* position: fixed;  */
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
