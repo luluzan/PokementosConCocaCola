@@ -199,18 +199,18 @@ export default {
             <v-img :src="pokemon.image" :style="{ backgroundColor: typeColors[pokemon.type] }" height="200"></v-img>
             <v-card-text>
               <div>Id: {{ pokemon.id }}</div>
-              <div>Name: {{ pokemon.name }}</div>
-              <div>Type: {{ pokemon.type }}</div>
-              <div>Height: {{ pokemon.height }} m</div>
-              <div>Weight: {{ pokemon.weight }} kg</div>
-              <div>Abilities: {{ pokemon.abilities.join(", ") }}</div>
-              <div>Base Experience {{ pokemon.baseExperience }}</div>
-              <div>Health {{ pokemon.hp }}</div>
-              <div>Attack: {{ pokemon.attack }}</div>
-              <div>Specie: {{ pokemon.genus.replace(' Pokémon', '') }}</div>
+              <div>Nombre: {{ pokemon.name }}</div>
+              <div>Tipo: {{ pokemon.type }}</div>
+              <div>Altura: {{ pokemon.height }} m</div>
+              <div>Peso: {{ pokemon.weight }} kg</div>
+              <div>Habilidades: {{ pokemon.abilities.join(", ") }}</div>
+              <div>Experiencia {{ pokemon.baseExperience }}</div>
+              <div>Salud {{ pokemon.hp }}</div>
+              <div>Ataque: {{ pokemon.attack }}</div>
+              <div>Especie: {{ pokemon.genus.replace(' Pokémon', '') }}</div>
               <div>Region: {{ pokemon.region }}</div>
-              <div>Gender: {{ pokemon.genderRate }}</div>
-              <div>Attack Moves: {{ getEnglishMoveNames(pokemon.moves).join(", ") }}</div>
+              <div>Género: {{ pokemon.genderRate }}</div>
+              <div>Movimiento de ataque: {{ getEnglishMoveNames(pokemon.moves).join(", ") }}</div>
             </v-card-text>
           </v-card>
         </v-col>
