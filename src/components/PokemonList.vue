@@ -316,6 +316,10 @@ button {
 
  .pokemonnameoverlay {
   font-size: 5rem;
+  color:#415fa5;
+  text-transform: capitalize;
+  font-weight: bolder;
+  ;
  }
 
  .carddata {
