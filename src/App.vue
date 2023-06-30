@@ -1,11 +1,8 @@
 <script setup>
 // import { RouterLink, RouterView } from 'vue-router'
-// import HelloWorld from './components/HelloWorld.vue'
-//import PokemonList from './components/GridContainer.vue'
-//import ToolBarsSearch from './components/ToolBarsSearch.vue';
-import GeneralView  from './components/GeneralView.vue';
+//import GeneralView  from './components/GeneralView.vue';
 import FooterComponent from './components/FooterComponent.vue'
-//import PokemonList from './components/PokemonList.vue';
+import PokemonList from './components/PokemonList.vue';
 </script>
 
 <template>
@@ -20,9 +17,8 @@ import FooterComponent from './components/FooterComponent.vue'
   </header>
 <main> 
   <!-- <ToolBarsSearch/> -->
-  //<PokemonList />
-  <GeneralView/>
-</main>
+  <PokemonList /> 
+  </main>
   <FooterComponent />
 </template>
 

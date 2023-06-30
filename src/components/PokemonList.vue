@@ -187,9 +187,11 @@ export default {
 
 <template>
   <div>
-    <v-select v-model="selectedType" :items="types" label="Select Type"></v-select>
-    <v-text-field v-model="filterId" label="Filter by ID"></v-text-field>
-    <v-text-field v-model="filterName" label="Filter by Name"></v-text-field>
+    <div class="pokeSearch">
+    <v-text-field class="custom-text-field" v-model="filterName" label="Buscar NOMBRE"></v-text-field>
+    <v-text-field class="custom-text-field" v-model="filterId" label="Introduce ID"></v-text-field>
+    <v-select class="custom-select" v-model="selectedType" :items="types" label="Selecciona TIPO"></v-select>
+  </div>
 
     <v-container>
       <v-row>
@@ -200,27 +202,24 @@ export default {
               <v-img src="/imgs/fondoPokeCard.jpg" class="bg" ></v-img>
               <div class="content">
                 <v-card-text>
-                  <div>Id: {{ pokemon.id }}</div>
-                  <div>Name: {{ pokemon.name }}</div>
-                  <div>Type: {{ pokemon.type }}</div>
-                  <div>Height: {{ pokemon.height }} m</div>
-                  <div>Weight: {{ pokemon.weight }} kg</div>
-                  <div>Abilities: {{ pokemon.abilities.join(", ") }}</div>
-                  <div>Base Experience {{ pokemon.baseExperience }}</div>
-                  <div>Health {{ pokemon.hp }}</div>
-                  <div>Attack: {{ pokemon.attack }}</div>
-                  <div>Specie: {{ pokemon.genus.replace(' Pokémon', '') }}</div>
-                  <div>Region: {{ pokemon.region }}</div>
-                  <div>Gender: {{ pokemon.genderRate }}</div>
-                  <div>Attack Move: {{ getEnglishMoveNames(pokemon.moves).join(", ") }}</div>
-                </v-card-text>
+              <div>Id: {{ pokemon.id }}</div>
+              <div>Nombre: {{ pokemon.name }}</div>
+              <div>Tipo: {{ pokemon.type }}</div>
+              <div>Altura: {{ pokemon.height }} m</div>
+              <div>Peso: {{ pokemon.weight }} kg</div>
+              <div>Habilidades: {{ pokemon.abilities.join(", ") }}</div>
+              <div>Puntos de Experiencia: {{ pokemon.baseExperience }}</div>
+              <div>Salud: {{ pokemon.hp }}</div>
+              <div>Ataque: {{ pokemon.attack }}</div>
+              <div>Especie: {{ pokemon.genus.replace(' Pokémon', '') }}</div>
+              <div>Region: {{ pokemon.region }}</div>
+              <div>Género: {{ pokemon.genderRate }}</div>
+              <div>Movimiento de ataque: {{ getEnglishMoveNames(pokemon.moves).join(", ") }}</div>
+            </v-card-text>
               </div>
               <v-card-actions>
                   <v-btn
-                    class="mx-auto mt-n6 text-none"
-                    size="x-large"
-                    block
-                    @click="overlay = !overlay">
+                    class="mx-auto mt-n6 text-none" size="x-large" block  @click="overlay = !overlay"> Más detalles
                   </v-btn>
                 <v-overlay v-model="overlay" class="align-center justify-center" scrim="black">
                   <v-card class="mx-auto" rounded="lg" :style="{ backgroundColor: typeColors[pokemon.type] }" width="95vmin">
