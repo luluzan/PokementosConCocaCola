@@ -3,9 +3,9 @@
 // import HelloWorld from './components/HelloWorld.vue'
 //import PokemonList from './components/GridContainer.vue'
 //import ToolBarsSearch from './components/ToolBarsSearch.vue';
-//import GeneralView  from './components/GeneralView.vue';
+import GeneralView  from './components/GeneralView.vue';
 import FooterComponent from './components/FooterComponent.vue'
-import PokemonList from './components/PokemonList.vue';
+//import PokemonList from './components/PokemonList.vue';
 </script>
 
 <template>
@@ -18,10 +18,10 @@ import PokemonList from './components/PokemonList.vue';
     <v-divider   :thickness="5"   class="border-opacity-100"  color="warning"></v-divider>
     <v-toolbar class="custom-toolbar" density="comfortable" color="#1D2C5E"></v-toolbar>
   </header>
- <main> 
+<main> 
   <!-- <ToolBarsSearch/> -->
-  <PokemonList />
-  <!-- <GeneralView/> -->
+  //<PokemonList />
+  <GeneralView/>
 </main>
   <FooterComponent />
 </template>
