@@ -7,24 +7,22 @@ body{
     color: black;
     font-family: Poppins;
     }
-    #vacio{
-        position:absolute; 
-        top:2px; 
-        left:37%;
-        filter: drop-shadow(0 2px 5px rgb(255, 255, 255));
-        z-index: 1000;
-        display: flex;
+
+#vacio{
+    position:absolute; 
+    top:2px; 
+    left:37%;
+    filter: drop-shadow(0 2px 5px rgb(255, 255, 255));
+    z-index: 1000;
+    display: flex;
     }
     #vacio img{
         width: 345px;
         margin: 16px auto;
-        
-        
     }
 
     .custom-toolbar{
         height: 85px;
-
     }
 
     .pokeSearch{
@@ -35,7 +33,7 @@ body{
         border-radius:48px ;
         padding:2%;
         margin: 3% 31%;
-         box-shadow: 10px 0px 20px 15px rgba(29, 44, 94, 0.5);
+        box-shadow: 10px 0px 20px 15px rgba(29, 44, 94, 0.5);
     }
 
     .custom-text-field {
@@ -44,18 +42,12 @@ body{
         color:#FFCB05; 
         font-weight: bolder;
     }
-    /* .active-text-field {
-        background-color: red; 
-        color: white;
-      }
-     */
-
+   
     .custom-select{
         background-color: #415FA5;
         color: #ff8c00;
         color:#FFCB05; 
         font-weight: bolder;
-        
     }
 
     .custom-select >>> .v-select__selections {
@@ -64,15 +56,13 @@ body{
         background-color: #EFEFEF;
         color: #333333;
         padding: 8px;
-      }
-      
-      .custom-select >>> .v-list-item {
-        /* Estilos personalizados para los elementos de la lista desplegable */
+    }
+    
+    .custom-select >>> .v-list-item {
         color: red;
-      }
-      
-      .custom-select >>> .v-list-item--active {
-        /* Estilos personalizados para el elemento activo en la lista desplegable */
+    }
+    
+    .custom-select >>> .v-list-item--active {
         background-color: #8d11e7;
         color: #b71010;
-      }
+    }
