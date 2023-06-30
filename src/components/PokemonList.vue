@@ -219,12 +219,11 @@ export default {
               </div>
               <v-card-actions>
                   <v-btn
-                    class="mx-auto mt-n6 text-none" size="x-large" block  @click="overlay = !overlay"> Más detalles
-                  </v-btn>
+                    class="mx-auto mt-n6 text-none" size="x-large" block  @click="overlay = !overlay"> Más detalles </v-btn>
                 <v-overlay v-model="overlay" class="align-center justify-center" scrim="black">
                   <v-card class="mx-auto" rounded="lg" :style="{ backgroundColor: typeColors[pokemon.type] }" width="95vmin">
                     <v-container class="d-flex align-center justify-center">
-                      <img class="pokeball" src="/imgs/pokeball.png" height="60">
+                      <img class="pokeball" src="/imgs/pokeball.png">
                       <v-card-title class="pokemonnameoverlay text-center pa-6
                         text-h4            [1]
                         text-md-h2         [2]
@@ -234,15 +233,15 @@ export default {
                         </v-container>
                       <v-img :src="pokemon.image" height="50vh" class="mx-auto">
                       </v-img>
-                    <v-divider></v-divider>
-                    <v-card color="#E46D6D" width="85%" rounded="xl" class="carddata mx-auto my-4">
+                    
+                    <v-card color="rgba(65, 95, 165, 0.9)" width="65%" rounded="xl" class="carddata mx-auto my-4">
                       <v-card-text class="mx-auto my-n3">
                         <v-row class="mb-n12">
                           <v-col cols="6">
-                            <v-card-title>Height</v-card-title>
+                            <v-card-title>Altura</v-card-title>
                           </v-col>
                           <v-col cols="6">
-                            <v-card-title class="text-end">Gender</v-card-title>
+                            <v-card-title class="text-end">Género</v-card-title>
                           </v-col>
                         </v-row>
                         <v-row class="mb-n12">
@@ -255,10 +254,10 @@ export default {
                         </v-row>
                         <v-row class="mb-n12">
                             <v-col cols="6">
-                              <v-card-title>Weight</v-card-title>
+                              <v-card-title>Peso</v-card-title>
                             </v-col>
                             <v-col cols="6">
-                              <v-card-title class="text-end">Ability</v-card-title>
+                              <v-card-title class="text-end">Habilidades</v-card-title>
                             </v-col>
                           </v-row>
                         <v-row>
@@ -320,12 +319,14 @@ button {
  }
 
  .carddata {
-  border: 4px solid black;
+  border: 3px solid #ff8c00;
  }
 
  .pokedexbtn {
   border: 4px solid black;
  }
+
+ 
 
  /* Media queries para los tamaños de imagen */
 @media (max-width: 960px) {
