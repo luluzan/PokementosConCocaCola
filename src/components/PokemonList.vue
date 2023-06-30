@@ -216,16 +216,12 @@ export default {
                 </v-card-text>
               </div>
               <v-card-actions>
-                <v-hover v-slot="{ isHovering, props }">
                   <v-btn
-                    v-bind="props"
-                    :elevation="isHovering ? 4 : 1"
                     class="mx-auto mt-n6 text-none"
-                    size="small"
+                    size="x-large"
+                    block
                     @click="overlay = !overlay">
-                    More about me!
                   </v-btn>
-                </v-hover>
                 <v-overlay v-model="overlay" class="align-center justify-center" scrim="black">
                   <v-card class="mx-auto" rounded="lg" :style="{ backgroundColor: typeColors[pokemon.type] }" width="95vmin">
                     <v-container class="d-flex align-center justify-center">
