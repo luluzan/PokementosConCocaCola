@@ -5,6 +5,7 @@ body{
     background-image:url(/imgs/bg.png);
     background-repeat: repeat;
     color: black;
+    font-family: Poppins;
     }
     #vacio{
         position:absolute; 
@@ -39,9 +40,8 @@ body{
 
     .custom-text-field {
         margin-bottom: 16px;
-        background-color: #1D2C5E;
+        background-color: #415FA5;
         color:#FFCB05; 
-        color: #ff8c00;
         font-weight: bolder;
     }
     /* .active-text-field {
