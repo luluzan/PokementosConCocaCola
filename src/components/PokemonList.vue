@@ -4,6 +4,7 @@ import axios from "axios";
 export default {
   data() {
     return {
+      overlay: false,
       pokemonList: [],
       filteredPokemonList: [],
       selectedType: "",
@@ -186,34 +187,161 @@ export default {
 
 <template>
   <div>
-    <v-text-field  v-model="filterName" label="Buscar NOMBRE"></v-text-field>
-    <v-text-field  v-model="filterId" label="Introduce ID"></v-text-field>
-    <v-select v-model="selectedType" :items="types" label="Selecciona TIPO"></v-select>
-  
+    <v-select v-model="selectedType" :items="types" label="Select Type"></v-select>
+    <v-text-field v-model="filterId" label="Filter by ID"></v-text-field>
+    <v-text-field v-model="filterName" label="Filter by Name"></v-text-field>
 
     <v-container>
       <v-row>
-        <v-col v-for="pokemon in filteredPokemonList" :key="pokemon.id" cols="12" sm="6" md="4" lg="3">
-          <v-card elevation="6" rounded="">
+        <v-col v-for="pokemon in filteredPokemonList" :key="pokemon.id" cols="12" sm="6" md="4"     lg="3">
+          <v-card elevation="6" rounded="lg">
             <v-img :src="pokemon.image" :style="{ backgroundColor: typeColors[pokemon.type] }" height="200"></v-img>
-            <v-card-text>
-              <div>Id: {{ pokemon.id }}</div>
-              <div>Name: {{ pokemon.name }}</div>
-              <div>Type: {{ pokemon.type }}</div>
-              <div>Height: {{ pokemon.height }} m</div>
-              <div>Weight: {{ pokemon.weight }} kg</div>
-              <div>Abilities: {{ pokemon.abilities.join(", ") }}</div>
-              <div>Base Experience {{ pokemon.baseExperience }}</div>
-              <div>Health {{ pokemon.hp }}</div>
-              <div>Attack: {{ pokemon.attack }}</div>
-              <div>Specie: {{ pokemon.genus.replace(' Pokémon', '') }}</div>
-              <div>Region: {{ pokemon.region }}</div>
-              <div>Gender: {{ pokemon.genderRate }}</div>
-              <div>Attack Moves: {{ getEnglishMoveNames(pokemon.moves).join(", ") }}</div>
-            </v-card-text>
+            <div class="wrap">
+              <v-img src="/imgs/fondoPokeCard.jpg" class="bg" ></v-img>
+              <div class="content">
+                <v-card-text>
+                  <div>Id: {{ pokemon.id }}</div>
+                  <div>Name: {{ pokemon.name }}</div>
+                  <div>Type: {{ pokemon.type }}</div>
+                  <div>Height: {{ pokemon.height }} m</div>
+                  <div>Weight: {{ pokemon.weight }} kg</div>
+                  <div>Abilities: {{ pokemon.abilities.join(", ") }}</div>
+                  <div>Base Experience {{ pokemon.baseExperience }}</div>
+                  <div>Health {{ pokemon.hp }}</div>
+                  <div>Attack: {{ pokemon.attack }}</div>
+                  <div>Specie: {{ pokemon.genus.replace(' Pokémon', '') }}</div>
+                  <div>Region: {{ pokemon.region }}</div>
+                  <div>Gender: {{ pokemon.genderRate }}</div>
+                  <div>Attack Move: {{ getEnglishMoveNames(pokemon.moves).join(", ") }}</div>
+                </v-card-text>
+              </div>
+              <v-card-actions>
+                <v-hover v-slot="{ isHovering, props }">
+                  <v-btn
+                    v-bind="props"
+                    :elevation="isHovering ? 4 : 1"
+                    class="mx-auto mt-n6 text-none"
+                    size="small"
+                    @click="overlay = !overlay">
+                    More about me!
+                  </v-btn>
+                </v-hover>
+                <v-overlay v-model="overlay" class="align-center justify-center" scrim="black">
+                  <v-card class="mx-auto" rounded="lg" :style="{ backgroundColor: typeColors[pokemon.type] }" width="95vmin">
+                    <v-container class="d-flex align-center justify-center">
+                      <img class="pokeball" src="/imgs/pokeball.png" height="60">
+                      <v-card-title class="pokemonnameoverlay text-center pa-6
+                        text-h4            [1]
+                        text-md-h2         [2]
+                        text-lg-h2         [2]
+                        text-xl-h2         [2] 
+                        text-truncate      [3]" :style="{ backgroundColor: typeColors[pokemon.type] }">{{ pokemon.name }}</v-card-title>
+                        </v-container>
+                      <v-img :src="pokemon.image" height="50vh" class="mx-auto">
+                      </v-img>
+                    <v-divider></v-divider>
+                    <v-card color="#E46D6D" width="85%" rounded="xl" class="carddata mx-auto my-4">
+                      <v-card-text class="mx-auto my-n3">
+                        <v-row class="mb-n12">
+                          <v-col cols="6">
+                            <v-card-title>Height</v-card-title>
+                          </v-col>
+                          <v-col cols="6">
+                            <v-card-title class="text-end">Gender</v-card-title>
+                          </v-col>
+                        </v-row>
+                        <v-row class="mb-n12">
+                          <v-col cols="6">
+                            <v-card-text>{{ pokemon.height }} m</v-card-text>
+                          </v-col>
+                          <v-col cols="6">
+                            <v-card-text class="text-end">{{ pokemon.genderRate }}</v-card-text>
+                          </v-col>
+                        </v-row>
+                        <v-row class="mb-n12">
+                            <v-col cols="6">
+                              <v-card-title>Weight</v-card-title>
+                            </v-col>
+                            <v-col cols="6">
+                              <v-card-title class="text-end">Ability</v-card-title>
+                            </v-col>
+                          </v-row>
+                        <v-row>
+                          <v-col cols="6">
+                            <v-card-text>{{ pokemon.weight }} kg</v-card-text>
+                          </v-col>
+                          <v-col cols="6">
+                            <v-card-text class="text-end">{{ pokemon.abilities[0] }}</v-card-text>
+                          </v-col>
+                        </v-row>
+                      </v-card-text>
+                    </v-card>
+                  </v-card>
+                </v-overlay>
+              </v-card-actions> 
+            </div> 
           </v-card>
         </v-col>
       </v-row>
     </v-container>
   </div>
 </template>
+
+<style scoped>
+p {
+  font-size: 0.625rem;
+}
+
+h6 {
+  font-size: 0.75rem;
+}
+
+ul {
+  list-style-type:none;
+}
+.wrap {
+  overflow: hidden;
+  position: relative;
+}
+.bg {
+  opacity: 0.2;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+}
+.content {
+  position: relative;
+}
+
+button {
+  border-radius: 6px;
+  font-size: 0.625rem;
+ }
+
+ .pokemonnameoverlay {
+  font-size: 5rem;
+ }
+
+ .carddata {
+  border: 4px solid black;
+ }
+
+ .pokedexbtn {
+  border: 4px solid black;
+ }
+
+ /* Media queries para los tamaños de imagen */
+@media (max-width: 960px) {
+  .pokeball {
+    height: 45px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .pokeball {
+    height: 30px !important;
+  }
+}
+</style>
